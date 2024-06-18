@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <new-component title="New title"></new-component>
+        <new-component title="Hello counter"></new-component>
+        <button @click="currentTab = nameButton" v-for="nameButton in nameButtons" :key="nameButton.id">
+            {{ nameButton }}
+        </button>
+        <component :is="chengeTabs"></component>
+
+        <!-- <new-component title="Hello second title" text="Hello second text"></new-component>
+        <new-component :title="article" v-for="article in articles" :key="article.id"></new-component> -->
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="comp.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nameButtons: [
+                    'one',
+                    'two',
+                    'tree',
+                ],
+                currentTab: 'one',
+                // articles: [
+                //     'info article',
+                //     'info article2',
+                //     'info article3'
+                // ]
+            },
+            computed: {
+                chengeTabs() {
+                    return `chenge-${this.currentTab}`;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

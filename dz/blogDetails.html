@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Детальный Блог</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <section> 
+                <h2 class="visible_hidden">Навигация</h2>
+                  <div class="container_nav">   
+                    <nav class="navigation">
+                        <ul class="left_nav">
+                            <li><img src="/dz/img/Logo.svg" alt="logo"></li>
+                            <li><span>Interno</span></li>
+                        </ul>
+                        <ul class="right_nav">
+                            <li><a href="./index.html">Домой</a></li>
+                            <li><a href="#">Проект</a></li>
+                            <li><a href="#">Блог</a></li>
+                        </ul>
+                    </nav>
+                  </div>
+                </section>   
+                <section>
+                    <div class="container_baner_blog_det">
+                        <div class="backgroud_container"></div>
+                    </div>
+                </section>          
+        </header>
+        <main>
+            <section>
+                <h2 class="visible_hidden">Тело страницы</h2>
+                <div class="container_project_blog">
+                    <blog-details :selected-category="selectedCategory"></blog-details>
+                    <btn-tag @tag-click="changeCategory"></btn-tag>
+                </div>
+                           
+            </section>
+        </main>
+        <footer>
+            <section>
+                <h2 class="visible_hidden">Подвал страницы</h2>
+                <div class="container_footer">
+                    <div class="footer_block">
+                        <div class="logo_footer">
+                            <img src="/dz/img/Logo.svg" alt="logo">
+                            <p class="logo_text_footer">Interno</p>
+                        </div>
+                        <div class="social_footer">
+                            <a href="#"><img class="twit_logo" src="/dz/img/twit_logo.png" alt=""></a>
+                            <a href="#"><img class="in_logo" src="/dz/img/in_logo.png" alt=""></a>
+                        </div>  
+                    </div>
+                    <div class="footer_block">
+                        <h2>Страницы</h2>
+                        <ul>
+                            <li>
+                                <a href="#">Домой</a>
+                            </li>
+                            <li>
+                                <a href="#">Проект</a>
+                            </li>
+                            <li>
+                                <a href="#">Блог</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_block">
+                        <h2>Контакты</h2>
+                        <address>
+                            <p>55 East Birchwood Ave. Brooklyn, New York 11201</p>
+                            <a href="mailto:contact@interno.com">contact@interno.com</a>
+                            <a href="tel:+11234567890">(123) 456 - 7890</a>
+                        </address>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
+    <script src="comp.js"></script>
+</body>
+</html>

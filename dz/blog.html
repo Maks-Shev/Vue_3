@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Блог</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <section> 
+                <h2 class="visible_hidden">Навигация</h2>
+                  <div class="container_nav">   
+                    <nav class="navigation">
+                        <ul class="left_nav">
+                            <li><img src="/dz/img/Logo.svg" alt="logo"></li>
+                            <li><span>Interno</span></li>
+                        </ul>
+                        <ul class="right_nav">
+                            <li><a href="./index.html">Домой</a></li>
+                            <li><a href="#">Проект</a></li>
+                            <li><a href="#">Блог</a></li>
+                        </ul>
+                    </nav>
+                  </div>
+                </section>   
+                <section>
+                    <div class="container_baner_blog">
+                        <div class="backgroud_container"></div>
+                        <div class="title_baner_blog_container">
+                           <div class="title_baner_blog">
+                            <h2 class="header_baner_blog">Статьи & Новости</h2>
+                            <p class="text_baner_blog">Домой / Блог</p>
+                           </div>
+                        </div>
+                    </div>
+                </section>          
+        </header>
+        <main>
+            <section>
+                <div class="container_latest_post">
+                    <h2>Последний пост</h2>
+                    <div class="latest_post_block">
+                        <div class="img_latest_post_left">
+                            <img src="/dz/img/main_foto_blog.png" alt="img_latest_post">
+                        </div>
+                        <div class="content_latest_post_right_up">
+                            <h2 class="title_latest_post">Low Cost Latest Invented Interior Designing Ideas</h2>
+                            <p class="text_latest_post">С того времени этот, похожий на латинский, текст стал стандартом в печатной промышленности для примеров шрифтов и текстов. Перед появлением электронных издательств дизайнеры импровизировали в работе над макетами, изображая текст при помощи волнистых линий. С появлением самоклеющихся наклеек с напечатанным текстом «Lorem ipsum» появился более реалистичный способ обозначения расположения текста на странице.</p>
+                            <div class="content_latest_post_right_down">
+                                <span>26 December,2022 </span>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container_news">
+                    <div class="blog_news">
+                        <div class="content_blog_news">
+                            <h2 class="title_blog_news">Статьи & Новости</h2>
+                        </div>
+                        <div class="blog_list_news">
+                            <div class="blog_item_news"  v-for="(item, index) in dataBlog" :key="item.id">
+                                <div class="img_blog_news">
+                                    <img :src="item.image" alt="">
+                                    <p class="img_blog_text_news">{{ item.imgText }}</p>
+                                </div>
+                                <div class="sub_content_blog_news">
+                                  <div class="sub_blog_left_news">
+                                    <h3>{{ item.subTitle }}</h3>
+                                  </div>
+                                  <div class="sub_blog_right_news">
+                                    <span>{{ item.subDate }}</span>
+                                    <a href="./blog.html"></a>
+                                  </div>  
+                                </div>
+                            </div>
+                           
+                        </div>  
+                        <div class="page_block">
+                            <a href="" class="active">1</a>
+                            <a href="">2</a>
+                            <a href="">3</a>
+                            <a href=""></a>
+                        </div>
+                    </div>     
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section>
+                <h2 class="visible_hidden">Подвал страницы</h2>
+                <div class="container_footer">
+                    <div class="footer_block">
+                        <div class="logo_footer">
+                            <img src="/dz/img/Logo.svg" alt="logo">
+                            <p class="logo_text_footer">Interno</p>
+                        </div>
+                        <div class="social_footer">
+                            <a href="#"><img class="twit_logo" src="/dz/img/twit_logo.png" alt=""></a>
+                            <a href="#"><img class="in_logo" src="/dz/img/in_logo.png" alt=""></a>
+                        </div>  
+                    </div>
+                    <div class="footer_block">
+                        <h2>Страницы</h2>
+                        <ul>
+                            <li>
+                                <a href="#">Домой</a>
+                            </li>
+                            <li>
+                                <a href="#">Проект</a>
+                            </li>
+                            <li>
+                                <a href="#">Блог</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer_block">
+                        <h2>Контакты</h2>
+                        <address>
+                            <p>55 East Birchwood Ave. Brooklyn, New York 11201</p>
+                            <a href="mailto:contact@interno.com">contact@interno.com</a>
+                            <a href="tel:+11234567890">(123) 456 - 7890</a>
+                        </address>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+       const app = Vue.createApp({
+        data(){
+            return {
+                dataBlog: [
+                {
+                    image: './img/blogPhoto_1.png',
+                    imgText: 'Дизайн кухни',
+                    subTitle: 'Создадим лучший макет перепланировки',
+                    subDate: '26 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_2.png',
+                    imgText: 'Дизайн для жизни',
+                    subTitle: 'Лучшие интерьерные идеи по низкой цене',
+                    subDate: '22 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_3.png',
+                    imgText: 'Дизайн Интерьера',
+                    subTitle: 'Лучшие интерьерные решения для офисов',
+                    subDate: '25 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_4.jpeg',
+                    imgText: 'Дизайн кухни',
+                    subTitle: 'Лучшие интерьерные решения для офисов',
+                    subDate: '25 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_5.jpeg',
+                    imgText: 'Дизайн для жизни',
+                    subTitle: 'Лучшие интерьерные решения для офисов',
+                    subDate: '25 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_6.png',
+                    imgText: 'Дизайн Интерьера',
+                    subTitle: 'Лучшие интерьерные решения для офисов',
+                    subDate: '25 Декабрь 2022',
+                },
+            ],
+
+            }
+        }
+     }).mount('#app')
+    </script>
+</body>
+</html>

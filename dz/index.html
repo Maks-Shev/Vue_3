@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная страница</title>
+</head>
+<body>
+ <div id="add">   
+    <header>
+        <section> 
+        <h2 class="visible_hidden">Навигация</h2>
+          <div class="container_nav">   
+            <nav class="navigation">
+                <ul class="left_nav">
+                    <li><img src="/dz/img/Logo.svg" alt="logo"></li>
+                    <li><span>Interno</span></li>
+                </ul>
+                <ul class="right_nav">
+                    <li><a href="#">Домой</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="./blog.html">Блог</a></li>
+                </ul>
+            </nav>
+          </div>
+        </section>  
+        <section>
+            <div class="container_baner">
+                <div class="baner">
+                    <div class="content_baner">
+                        <h2 class="title_baner">Пусть ваш дом будет уникальным</h2>
+                        <p class="text_baner">Существует много вариаций Lorem Ipsum, которые можно использовать</p>
+                        <a href="#" class="btn_baner">Начать<img src="/dz/img/start.svg" alt=""></a>
+                        
+                    </div>
+                </div> 
+            </div>
+        </section>  
+    </header>
+    <main>
+        <section>
+            <h2 class="visible_hidden">Тело страницы</h2>
+            <div class="container_project">
+                <div class="project">
+                    <div class="content_project">
+                        <h2 class="title_project">Следите за нашими проектами</h2>
+                        <p class="text_project">Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы </p>
+                    </div>
+                    <div class="container_block_project">
+                        <div class="block_project">
+                            <div class="img_project">
+                                <img src="/dz/img/projectPhoto_1.png" alt="">
+                            </div>
+                            <div class="sub_content_project">
+                              <div class="sub_content_left">
+                                <h3>Современная кухня</h3>
+                                <span>Декор / Планировка</span>
+                              </div>
+                              <div class="sub_content_right">
+                                <a href="#"></a>
+                              </div>  
+                            </div>
+                        </div>
+                        <div class="block_project">
+                            <div class="img_project">
+                                <img src="/dz/img/projectPhoto_2.png" alt="">
+                            </div>
+                            <div class="sub_content_project">
+                                <div class="sub_content_left">
+                                    <h3>Современная кухня</h3>
+                                    <span>Декор / Планировка</span>
+                                </div>
+                                <div class="sub_content_right">
+                                    <a href="#"></a>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="block_project">
+                            <div class="img_project">
+                                <img src="/dz/img/projectPhoto_3.png" alt="">
+                            </div>
+                            <div class="sub_content_project">
+                                <div class="sub_content_left">
+                                    <h3>Современная кухня</h3>
+                                    <span>Декор / Планировка</span>
+                                </div>
+                                <div class="sub_content_right">
+                                    <a href="#"></a>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="block_project">
+                            <div class="img_project">
+                                <img src="/dz/img/projectPhoto_4.png" alt="">
+                            </div>
+                            <div class="sub_content_project">
+                                <div class="sub_content_left">
+                                    <h3>Современная кухня</h3>
+                                    <span>Декор / Планировка</span>
+                                </div>
+                                <div class="sub_content_right">
+                                    <a href="#"></a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="couter_container">
+                <div class="counter_block">
+                    <div class="counter_content">
+                        <h2 class="num_count">12</h2>
+                        <span class="text_count">Лет опыта</span>
+                    </div>
+                    <div class="count_line"></div>
+                    <div class="counter_content">
+                        <h2 class="num_count">85</h2>
+                        <span class="text_count">Успешных проектов</span>
+                    </div>
+                    <div class="count_line"></div>
+                    <div class="counter_content">
+                        <h2 class="num_count">15</h2>
+                        <span class="text_count">Проектов в работе</span>
+                    </div>
+                    <div class="count_line"></div>
+                    <div class="counter_content">
+                        <h2 class="num_count">95</h2>
+                        <span class="text_count">Счастливых клиентов</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="blog_container">
+                    <div class="blog">
+                        <div class="content_blog">
+                            <h2 class="title_blog">Статьи & Новости</h2>
+                            <p class="text_blog">Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы </p>
+                        </div>
+                        <div class="blog_list">
+                            <div class="blog_item"  v-for="(item, index) in dataBlog" :key="item.id">
+                                <div class="img_blog">
+                                    <img :src="item.image" alt="">
+                                    <p class="img_blog_text">{{ item.imgText }}</p>
+                                </div>
+                                <div class="sub_content_blog">
+                                  <div class="sub_blog_left">
+                                    <h3>{{ item.subTitle }}</h3>
+                                  </div>
+                                  <div class="sub_blog_right">
+                                    <span>{{ item.subDate }}</span>
+                                    <a href="./blog.html"></a>
+                                  </div>  
+                                </div>
+                            </div>
+                            <!-- <div class="blog_item">
+                                <div class="img_blog">
+                                    <img src="/dz/img/blogPhoto_2.png" alt="">
+                                </div>
+                                <div class="sub_content_blog">
+                                    <div class="sub_blog_left">
+                                        <h3>Лучшие интерьерные идеи по низкой цене</h3>
+                                    </div>
+                                    <div class="sub_blog_right">
+                                        <span>22 Декабрь 2022</span>
+                                        <a href="#"></a>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="blog_item">
+                                <div class="img_blog">
+                                    <img src="/dz/img/blogPhoto_3.png" alt="">
+                                </div>
+                                <div class="sub_content_blog">
+                                    <div class="sub_blog_left">
+                                        <h3>Лучшие интерьерные решения для офисов </h3>
+                                    </div>
+                                    <div class="sub_blog_right">
+                                        <span>25 Декабрь 2022</span>
+                                        <a href="#"></a>
+                                    </div> 
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <h2 class="visible_hidden">Подвал страницы</h2>
+            <div class="container_footer">
+                <div class="footer_block">
+                    <div class="logo_footer">
+                        <img src="/dz/img/Logo.svg" alt="logo">
+                        <p class="logo_text_footer">Interno</p>
+                    </div>
+                    <div class="social_footer">
+                        <a href="#"><img class="twit_logo" src="/dz/img/twit_logo.png" alt=""></a>
+                        <a href="#"><img class="in_logo" src="/dz/img/in_logo.png" alt=""></a>
+                    </div>  
+                </div>
+                <div class="footer_block">
+                    <h2>Страницы</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Домой</a>
+                        </li>
+                        <li>
+                            <a href="#">Проект</a>
+                        </li>
+                        <li>
+                            <a href="#">Блог</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_block">
+                    <h2>Контакты</h2>
+                    <address>
+                        <p>55 East Birchwood Ave. Brooklyn, New York 11201</p>
+                        <a href="mailto:contact@interno.com">contact@interno.com</a>
+                        <a href="tel:+11234567890">(123) 456 - 7890</a>
+                    </address>
+                </div>
+            </div>
+        </section>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <script>
+     const add = Vue.createApp({
+        data(){
+            return {
+                dataBlog: [
+                {
+                    image: './img/blogPhoto_1.png',
+                    imgText: 'Дизайн кухни',
+                    subTitle: 'Создадим лучший макет перепланировки',
+                    subDate: '26 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_2.png',
+                    imgText: 'Дизайн для жизни',
+                    subTitle: 'Лучшие интерьерные идеи по низкой цене',
+                    subDate: '22 Декабрь 2022',
+                },
+                {
+                    image: './img/blogPhoto_3.png',
+                    imgText: 'Дизайн Интерьера',
+                    subTitle: 'Лучшие интерьерные решения для офисов',
+                    subDate: '25 Декабрь 2022',
+                },
+            ],
+
+            }
+        }
+     }).mount('#add')
+    </script>
+</body>
+</html>
